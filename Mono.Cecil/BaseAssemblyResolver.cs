@@ -188,6 +188,7 @@ namespace Mono.Cecil {
 			foreach (var directory in directories) {
 				foreach (var extension in extensions) {
 					string file = Path.Combine (directory, name.Name + extension);
+                    file = file.Replace(".dll.dll", ".dll");
 					if (File.Exists (file))
 						return GetAssembly (file, parameters);
 				}
